@@ -1,5 +1,5 @@
 # Overview
-Takes a MIDI file as input and outputs the corrosponding config statements to get it to play on Omnitik routers
+Takes a MIDI file as input and outputs the corresponding config statements to get it to play on Omnitik routers
 
 # Usage
 Uses the music21 library from MIT
