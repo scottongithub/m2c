@@ -14,9 +14,9 @@ $ python3 m2c.py <filename>
 It will ask for BPM - this will be what BPM was set to on whatever you've auditioned the MIDI file on but can be changed (Ardour's default setting is 120). And then it spits out the the config commands for copy-paste into a config file/template.
 
 # Notes
-If multiple notes are sounding, the most recently played note takes over
-It reads 'track 0' of the MIDI file which seems to be what anything I've tested is using
-Suggestions are always welcome and appreciated
+- If multiple notes are sounding, the most recently played note takes over
+- It reads 'track 0' of the MIDI file which seems to be what anything I've tested is using
+- Suggestions are always welcome and appreciated
 
 # Example
 ```sh
