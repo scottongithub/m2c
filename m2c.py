@@ -18,6 +18,14 @@ def note_to_freq( _note ):
     _freq = (2 ** ((_note - 69) / 12)) * 440
     return(_freq)
 
+#prints the note that's in the buffer
+def spit_out_note():
+    print(":beep frequency=%i" % note_to_freq(curr_pitch), "length=%ims;" % (ms_per_tick * note_buffer))
+
+#prints the whitespace that's in the buffer
+def spit_out_whitespace():
+    print(":delay %ims;" % (ms_per_tick * note_buffer))
+
 #initialize counters
 curr_state = "off"
 curr_pitch = 0
@@ -32,13 +40,13 @@ for event in mt:
         note_buffer = note_buffer + event.time
     elif event.isNoteOn() and curr_state == "off":
         #must've been whitespace - print it and set info of the new note
-        print(":delay %ims;" % (ms_per_tick * note_buffer))
+        spit_out_whitespace()
         note_buffer = 0
         curr_state = "on"
         curr_pitch = event.pitch
     elif event.isNoteOn() and curr_state == "on":
         #a new note overlaps - spit out the previous note and start the new one
-        print(":beep frequency=%i" % note_to_freq(curr_pitch), "length=%ims;" % (ms_per_tick * note_buffer))
+        spit_out_note()
         note_buffer = 0
         note_overlap += 1
         curr_pitch = event.pitch
@@ -46,6 +54,6 @@ for event in mt:
         note_overlap -=1
     elif event.isNoteOff() and (curr_state) == "on":
         #must be no overlap so print the previous note and start whitespace
-        print(":beep frequency=%i" % note_to_freq(curr_pitch), "length=%ims;" % (ms_per_tick * note_buffer))
+        spit_out_note()
         note_buffer = 0
         curr_state = "off"
