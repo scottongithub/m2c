@@ -27,33 +27,32 @@ def spit_out_whitespace():
     print(":delay %ims;" % (ms_per_tick * note_buffer))
 
 #initialize counters
-curr_state = "off"
-curr_pitch = 0
-note_overlap = 0
 note_buffer = 0
+note_qty = 0
+curr_pitch = 0
 
-#business starts here. the overlap stuff is to accommodate more than one note
-#at a time - it stops the older note and starts the new one
+#business starts here. when two notes are sounding at the same time
+#in MIDI, the most recently-played note takes over here (can only play one note)
 for event in mt:
+    #all time entries (DeltaTime) get thrown into the buffer
     if isinstance(event.time, int) and (event.time > 0):
-        #all time entries (DeltaTime) get thrown into the buffer
         note_buffer = note_buffer + event.time
-    elif event.isNoteOn() and curr_state == "off":
+    elif event.isNoteOn() and note_qty == 0:
         #must've been whitespace - print it and set info of the new note
         spit_out_whitespace()
         note_buffer = 0
-        curr_state = "on"
+        note_qty = 1
         curr_pitch = event.pitch
-    elif event.isNoteOn() and curr_state == "on":
+    elif event.isNoteOn() and note_qty >= 1:
         #a new note overlaps - spit out the previous note and start the new one
         spit_out_note()
         note_buffer = 0
-        note_overlap += 1
+        note_qty += 1
         curr_pitch = event.pitch
-    elif event.isNoteOff() and note_overlap >=1:
-        note_overlap -=1
-    elif event.isNoteOff() and (curr_state) == "on":
+    elif event.isNoteOff() and note_qty > 1:
+        note_qty -=1
+    elif event.isNoteOff() and note_qty == 1:
         #must be no overlap so print the previous note and start whitespace
         spit_out_note()
         note_buffer = 0
-        curr_state = "off"
+        note_qty = 0
