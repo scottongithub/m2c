@@ -14,7 +14,7 @@ $ python3 m2c.py <filename>
 It will ask for BPM - this will be what BPM was set to on whatever you've auditioned the MIDI file on but can be changed (Ardour's default setting is 120). And then it spits out the the config commands for copy-paste into a config file/template.
 
 # Notes
-- This function is a transform of a 2-dimensional representation (MIDI) of music into a 1-dimensional (beep-commands) representation. The concession is made that if multiple notes are sounding (in 2-D MIDI-space), then the most recently-played note will take over in 1-dimensional beep-space, as only one note can sound at a time in beep-space.
+- This function is a transform of a 2-dimensional representation (MIDI) of music into a 1-dimensional (beep-commands) representation. The concession is made that if multiple notes are sounding at once (in 2-D MIDI-space), then the most recently-played note will take over in 1-dimensional beep-space, as only one note can sound at a time in beep-space.
 - By default it reads 'track 0' of the MIDI file which seems to be what anything I've tested is using
 - Suggestions are always welcome and appreciated
 
