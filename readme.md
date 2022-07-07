@@ -23,7 +23,7 @@ It will ask for BPM - this will be what BPM was set to on whatever you've auditi
 The opening melody (minus octaves) of The Entertainer (Scott Joplin, 1902) looks like this in MIDI space:
 
 <p align="center">
-<img src=(https://user-images.githubusercontent.com/21364725/177835552-e8b6eac7-aecd-41a9-b563-ba758fee4df7.png) />
+<img src="https://user-images.githubusercontent.com/21364725/177835552-e8b6eac7-aecd-41a9-b563-ba758fee4df7.png" />
 </p>
 
 And will look like the beep commands below when m2c.py is run as:
