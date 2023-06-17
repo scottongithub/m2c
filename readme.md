@@ -30,36 +30,42 @@ And will look like the beep commands below when m2c.py is run as:
 
 ```sh
 $ python3 m2c.py The_Entertainer.mid
-BPM?: 148
-:delay 1163ms;
-:beep frequency=293 length=176ms;
-:delay 53ms;
-:beep frequency=311 length=152ms;
-:delay 43ms;
-:beep frequency=329 length=217ms;
-:beep frequency=523 length=335ms;
-:delay 50ms;
-:beep frequency=329 length=142ms;
-:delay 80ms;
-:beep frequency=523 length=321ms;
-:delay 50ms;
-:beep frequency=329 length=203ms;
-:delay 30ms;
-:beep frequency=523 length=933ms;
-:delay 310ms;
-:beep frequency=523 length=149ms;
-:delay 58ms;
-:beep frequency=587 length=158ms;
-:beep frequency=622 length=171ms;
-:delay 47ms;
-:beep frequency=659 length=152ms;
-:beep frequency=523 length=216ms;
-:beep frequency=587 length=204ms;
-:beep frequency=659 length=354ms;
-:delay 22ms;
-:beep frequency=493 length=134ms;
-:delay 83ms;
-:beep frequency=587 length=300ms;
-:delay 139ms;
-:beep frequency=523 length=1013ms;
+BPM?: 120
+:delay 1080ms;
+:beep frequency=146 length=150ms;
+:delay 169ms;
+:beep frequency=155 length=114ms;
+:delay 204ms;
+:beep frequency=164 length=153ms;
+:delay 200ms;
+:beep frequency=261 length=304ms;
+:delay 365ms;
+:beep frequency=164 length=142ms;
+:delay 223ms;
+:beep frequency=261 length=295ms;
+:delay 382ms;
+:beep frequency=164 length=161ms;
+:delay 216ms;
+:beep frequency=261 length=794ms;
+:delay 987ms;
+:beep frequency=261 length=192ms;
+:delay 192ms;
+:beep frequency=293 length=148ms;
+:delay 184ms;
+:beep frequency=311 length=140ms;
+:delay 208ms;
+:beep frequency=329 length=138ms;
+:delay 145ms;
+:beep frequency=261 length=198ms;
+:delay 226ms;
+:beep frequency=293 length=130ms;
+:delay 189ms;
+:beep frequency=329 length=343ms;
+:delay 379ms;
+:beep frequency=246 length=164ms;
+:delay 215ms;
+:beep frequency=293 length=221ms;
+:delay 396ms;
+:beep frequency=261 length=794ms;
+:delay 794ms;
 ```
