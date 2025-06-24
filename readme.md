@@ -2,10 +2,8 @@
 Takes a MIDI file as input and outputs the corresponding config statements to get it to play on Mikrotik/Omnitik routers
 
 # Usage
-Uses the music21 library from MIT
-```sh
-$ pip3 install music21
-```
+Uses the music21 library from MIT by directly installing with `pip3 install music21`, or use Pipenv to get a package-locked environment `pipenv install`.
+
 Then run m2c.py with the .mid file as its only argument:
 ```sh
 $ python3 m2c.py <filename>
