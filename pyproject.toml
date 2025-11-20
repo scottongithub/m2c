@@ -1,0 +1,9 @@
+[project]
+name = "m2c"
+version = "0.1.0"
+description = "Convert MIDI to Mikrotik Beeps"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "music21>=9.9.1",
+]

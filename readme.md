@@ -2,16 +2,18 @@
 Takes a MIDI file as input and outputs the corresponding config statements to get it to play on Mikrotik/Omnitik routers
 
 # Usage
-Uses the music21 library from MIT
-```sh
-$ pip3 install music21
-```
+Manually install the `music21` library using poetry, pip, etc. Alternatively, install the [uv package manager](https://docs.astral.sh/uv/getting-started/installation/) and jump directly into running the program. The uv package manager will handle Python installation, plus all dependencies, based on the `pyproject.toml` file. 
+
 Then run m2c.py with the .mid file as its only argument:
 ```sh
+$ uv run m2c.py <filename>
+
+-or-
+
 $ python3 m2c.py <filename>
 ```
 
-It will ask for BPM - this will be what BPM was set to on whatever you've auditioned the MIDI file on but can be changed (Ardour's default setting is 120). And then it spits out the the config commands for copy-paste into a config file/template.
+The program will ask for BPM. This will be what BPM was set to on whatever you've auditioned the MIDI file, but can be changed as well. Ardour's default setting is 120. After BPM is input, the program will output the the config commands for copy-paste into a config file/template.
 
 # Notes
 - This function is a transform of a 2-dimensional representation (MIDI) of music into a 1-dimensional (beep-commands) representation. The concession is made that if multiple notes are sounding at once (in 2-D MIDI-space), then the most recently-started note will take over in 1-dimensional beep-space, as only one note can sound at a time in beep-space.
